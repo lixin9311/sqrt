@@ -25,7 +25,7 @@ public class Sqrt{
         double z = 1.0;
         for (int i = 0; i < (int)x; i++) {
             if (abs(z * z - x) < 1e-7) break;
-            z -= (z * z - x) / (2.0 * x);
+            z -= (z * z - x) / (2.0 * z);
         }
         return z;
     }

@@ -12,7 +12,7 @@ static inline double new_sqrt(double x) {
   double z = 1.0;
   for (int i = 0; i < (int)x; i++) {
     if (new_fabs(z * z - x) < 1e-7) break;
-    z -= (z * z - x) / (2.0 * x);
+    z -= (z * z - x) / (2.0 * z);
   }
   return z;
 }
@@ -25,9 +25,9 @@ int main(int argc, char const *argv[]) {
   asm volatile("# START!!!");
   ts1 = rdtscp();
   for (i = 0; i < 100; i++) {
-    for (j = 1; j < 501; j++) {
+   for (j = 1; j < 501; j++) {
       x = new_sqrt((double)j);
-    }
+   }
   }
   asm volatile("# END!!!");
   ts2 = rdtscp();

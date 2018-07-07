@@ -17,7 +17,7 @@ def sqrt(x):
     for i in range(1, int(x)):
         if new_abs(z * z - x) < 1e-7:
             break
-        z -= (z * z - x) / (2.0 * x)
+        z -= (z * z - x) / (2.0 * z)
     return z
 
 def main():
