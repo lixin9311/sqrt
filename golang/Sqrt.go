@@ -2,9 +2,15 @@ package main
 
 import (
 	"fmt"
-	"math"
 	"time"
 )
+
+func abs(x float64) float64 {
+	if x < 0 {
+		return -x
+	}
+	return x
+}
 
 func sqrt(x float64) float64 {
 	if x == 0.0 {
@@ -12,7 +18,7 @@ func sqrt(x float64) float64 {
 	}
 	z := 1.0
 	for i := 0; i < int(x); i++ {
-		if math.Abs(z*z-x) < 1e-7 {
+		if abs(z*z-x) < 1e-7 {
 			break
 		}
 		z -= (z*z - x) / (2.0 * z)

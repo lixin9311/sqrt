@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
 import time
 
+def new_abs(x):
+    if x < 0:
+        return -x
+    return x
+
 def sqrt(x):
     if x == 0.0:
         return 0.0
     z = 1.0
     for i in range(1, int(x)):
-        if abs(z * z - x) < 1e-7:
+        if new_abs(z * z - x) < 1e-7:
             break
         z -= (z * z - x) / (2.0 * x)
     return z

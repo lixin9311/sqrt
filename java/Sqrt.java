@@ -13,11 +13,17 @@ public class Sqrt{
        System.out.printf("result: %f\n", x);
     }
     
+    public static double abs(double x) {
+        if (x < 0) return -x;
+        return x;
+    }
+
+
     public static double sqrt(double x) {
         if (x == 0.0) return 0.0;
         double z = 1.0;
         for (int i = 0; i < (int)x; i++) {
-            if (Math.abs(z * z - x) < 1e-7) break;
+            if (abs(z * z - x) < 1e-7) break;
             z -= (z * z - x) / (2.0 * x);
         }
         return z;
