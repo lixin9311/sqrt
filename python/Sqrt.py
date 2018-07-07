@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 import time
+import sys
+
+def eprintf(format, *args):
+    sys.stderr.write(format % args)
 
 def new_abs(x):
     if x < 0:
@@ -25,6 +29,7 @@ def main():
     wtime = int((ts2 - ts1) / 1000 )
     print("used:", wtime, "ns")
     print("result: ", x)
+    eprintf("%d\n", wtime)
 
 if __name__ == "__main__":
     main()

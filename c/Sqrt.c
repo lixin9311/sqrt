@@ -34,5 +34,6 @@ int main(int argc, char const *argv[]) {
   wtime = tickToUsec(ts1, ts2);
   printf("used: %llu us\n", wtime);
   printf("result: %lf\n", x);
+  fprintf(stderr, "%llu\n", wtime);
   return 0;
 }

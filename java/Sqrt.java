@@ -11,6 +11,7 @@ public class Sqrt{
        long wtime = (ts2 - ts1) / 1000 ;
        System.out.printf("used: %d us\n", wtime);
        System.out.printf("result: %f\n", x);
+       System.err.printf("%d\n", wtime);
     }
     
     public static double abs(double x) {

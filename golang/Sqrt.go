@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"time"
 )
 
@@ -38,4 +39,5 @@ func main() {
 	dura := ts2.Sub(ts1)
 	fmt.Printf("used: %d us\n", int64(dura/time.Microsecond))
 	fmt.Println("result: ", x)
+	fmt.Fprintf(os.Stderr, "%d\n", int64(dura/time.Microsecond))
 }
